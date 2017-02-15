@@ -1,35 +1,36 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Todo from './Todo';
+import { removeTodo}  from '../actions'
 
-const todoList = ({todos}) => {
-  console.log(todos);
+const TodoList = ({todos, onRemoveTodo}) => {
   return (
   <ul>
     {todos.map(todo =>
-      <Todo
-        key={todo.id}
-        {...todo}
-      />
+      <div key={todo.id}>
+        <Todo
+          {...todo}
+        />
+        <button type="button" onClick={() => onRemoveTodo(todo.id)}>
+          X
+        </button>
+      </div>
     )}
   </ul>);
 };
 
-todoList.propTypes = {
+TodoList.propTypes = {
   todos: PropTypes.array.isRequired
 };
 
-const getTodos = (todos) => {
-  if(todos)
-    return todos;
-  return [];
-}
-const mapStateToProps = (state) => ({
-  todos: getTodos(state)
+
+const mapStateToProps = (todos) => ({
+  'todos': todos
 });
 
-const TodoList = connect(mapStateToProps)(todoList);
+const mapDispatchToProps = (dispatch) => ({
+  onRemoveTodo: (id) => {dispatch(removeTodo(id));}
+});
 
 
-
-export default TodoList;
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

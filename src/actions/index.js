@@ -9,3 +9,8 @@ export const newTodo = (text) => {
   nextTodoId += 1;
   return newTodo;
 };
+
+export const removeTodo = (id) => ({
+  type: 'REMOVE_TODO',
+  id: id
+});

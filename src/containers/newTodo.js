@@ -12,7 +12,7 @@ let NewTodo = ({ dispatch }) => {
         input.value = '';
         }}>
         <input ref={node => {
-          input = node
+          input = node;
         }} />
         <button type="submit">
           Add
