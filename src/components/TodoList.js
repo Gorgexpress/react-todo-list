@@ -23,6 +23,10 @@ TodoList.propTypes = {
   todos: PropTypes.array.isRequired
 };
 
+TodoList.defaultProps = {
+  todos: []
+};
+
 
 const mapStateToProps = (todos) => ({
   'todos': todos
@@ -34,3 +38,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+export {TodoList as PureTodoList};
