@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { expect } from 'chai';
 import { Provider } from 'react-redux';
 import App from './App';
@@ -9,7 +9,8 @@ import configureStore from 'redux-mock-store';
 const mockStore = configureStore([]);
 
 describe('<App />', () => {
-  it('renders without crashing', () => {
+  //Probably unecessary, but I want to know how to use mount with redux involved.
+  it('renders without crashing (not shallow)', () => {
     let store = mockStore([]);
     const wrapper = mount(
       <Provider store={store}>

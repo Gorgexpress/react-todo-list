@@ -1,11 +1,11 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import {PureTodoList as TodoList} from './TodoList'
-import Todo from './Todo'
+import Todo from './Todo';
 
 describe('<TodoList />', () => {
-  it('initializes with an empty list', () => {
+  it('initializes with an empty list of todos', () => {
     const wrapper = shallow(<TodoList />);
     expect(wrapper.find(Todo)).to.have.length(0);
   });
@@ -18,9 +18,5 @@ describe('<TodoList />', () => {
       ];
     const wrapper = shallow(<TodoList todos={todos}/>);
     expect(wrapper.find(Todo)).to.have.length(4);
-  });
-
-  it('renders without crashing', () => {
-    const wrapper = mount(<TodoList />);
   });
 });

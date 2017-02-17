@@ -21,6 +21,5 @@ let NewTodo = ({ dispatch }) => {
     </div>
   );
 };
-NewTodo = connect()(NewTodo);
-
-export default NewTodo;
+export default connect()(NewTodo);
+export {NewTodo as PureNewTodo};
