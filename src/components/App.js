@@ -5,11 +5,11 @@ import FilteredTodoList from '../containers/FilteredTodoList';
 import RemainingTodos from '../containers/RemainingTodos';
 
 const App = () => (
-  <div>
+  <div id="app">
     <NewTodo />
     <FilteredTodoList />
-    <Footer />
     <RemainingTodos />
+    <Footer />
   </div>
 );
 
