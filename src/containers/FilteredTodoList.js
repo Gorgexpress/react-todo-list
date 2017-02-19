@@ -33,4 +33,4 @@ const FilteredTodoList = connect(
   mapDispatchToProps
 )(TodoList);
 
-export default FilteredTodoList
+export default FilteredTodoList;
