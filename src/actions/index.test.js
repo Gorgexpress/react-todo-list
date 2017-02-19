@@ -15,7 +15,7 @@ describe('actions', () => {
     const id = 0;
     const expectedAction = {
       id,
-      type: 'TOGGLE_TODO'
+      type: 'TOGGLE_TODO',
     };
     expect(actions.toggleTodo(id)).to.deep.equal(expectedAction);
   })
@@ -23,8 +23,16 @@ describe('actions', () => {
     const id = 1;
     const expectedAction = {
       id,
-      type: 'REMOVE_TODO'
+      type: 'REMOVE_TODO',
     };
     expect(actions.removeTodo(id)).to.deep.equal(expectedAction);
+  });
+  it('should create an action to set a visibility filter', () => {
+    const filter = 'SHOW_ALL'
+    const expectedAction = {
+      filter,
+      type: 'SET_VISIBILITY_FILTER',
+    };
+    expect(actions.setVisibilityFilter(filter)).to.deep.equal(expectedAction);
   });
 });

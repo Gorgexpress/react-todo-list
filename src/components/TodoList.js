@@ -1,7 +1,5 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
 import Todo from './Todo';
-import { removeTodo, toggleTodo }  from '../actions'
 
 const TodoList = ({todos, onToggleTodo, onRemoveTodo}) => {
   return (
@@ -24,20 +22,4 @@ TodoList.propTypes = {
   todos: PropTypes.array.isRequired
 };
 
-TodoList.defaultProps = {
-  todos: []
-};
-
-
-const mapStateToProps = (todos) => ({
-  'todos': todos
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  onRemoveTodo: (id) => dispatch(removeTodo(id)),
-  onToggleTodo: (id) => dispatch(toggleTodo(id))
-});
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
-export {TodoList as PureTodoList};
+export default TodoList;

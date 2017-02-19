@@ -10,12 +10,23 @@ export const newTodo = (text) => {
   return newTodo;
 };
 
-export const toggleTodo = (id) => ({
-  id,
-  type: 'TOGGLE_TODO'
-});
+export const toggleTodo = (id) => {
+  return {
+    id,
+    type: 'TOGGLE_TODO'
+  };
+};
 
-export const removeTodo = (id) => ({
-  id,
-  type: 'REMOVE_TODO'
-});
+export const removeTodo = (id) => {
+  return {
+    id,
+    type: 'REMOVE_TODO'
+  };
+};
+
+export const setVisibilityFilter = (filter) => {
+  return {
+    filter,
+    type: 'SET_VISIBILITY_FILTER',
+  };
+};

@@ -1,15 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import Todo from './Todo';
+import Link from './Link';
 
-describe('<Todo />', () => {
+describe('<Link />', () => {
   it('renders without error', () => {
     const wrapper = shallow(
-      <Todo 
-        text={'do a thing'}
-        id={0}
-        isDone={false}
+      <Link
+        active={true}
+        children={(<p>hello!</p>)}
         onClick={() => 0}
       />
     );

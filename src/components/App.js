@@ -1,11 +1,15 @@
 import React from 'react';
 import NewTodo from '../containers/NewTodo';
-import TodoList from './TodoList';
+import Footer from './Footer';
+import FilteredTodoList from '../containers/FilteredTodoList';
+import RemainingTodos from '../containers/RemainingTodos';
 
 const App = () => (
   <div>
     <NewTodo />
-    <TodoList />
+    <FilteredTodoList />
+    <Footer />
+    <RemainingTodos />
   </div>
 );
 
