@@ -2,15 +2,20 @@ let nextTodoId = 0;
 
 export const newTodo = (text) => {
   let newTodo = {
+    text,
     type: 'NEW_TODO',
     id: nextTodoId,
-    text
   };
   nextTodoId += 1;
   return newTodo;
 };
 
+export const toggleTodo = (id) => ({
+  id,
+  type: 'TOGGLE_TODO'
+});
+
 export const removeTodo = (id) => ({
-  type: 'REMOVE_TODO',
-  id: id
+  id,
+  type: 'REMOVE_TODO'
 });

@@ -10,7 +10,7 @@ const mockStore = configureStore([]);
 
 describe('<App />', () => {
   //Probably unecessary, but I want to know how to use mount with redux involved.
-  it('renders without crashing (not shallow)', () => {
+  it('renders without error (not shallow)', () => {
     let store = mockStore([]);
     const wrapper = mount(
       <Provider store={store}>

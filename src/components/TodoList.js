@@ -1,15 +1,16 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Todo from './Todo';
-import { removeTodo}  from '../actions'
+import { removeTodo, toggleTodo }  from '../actions'
 
-const TodoList = ({todos, onRemoveTodo}) => {
+const TodoList = ({todos, onToggleTodo, onRemoveTodo}) => {
   return (
   <ul>
     {todos.map(todo =>
       <div key={todo.id}>
         <Todo
           {...todo}
+          onClick={() => onToggleTodo(todo.id)}
         />
         <button type="button" onClick={() => onRemoveTodo(todo.id)}>
           X
@@ -33,7 +34,8 @@ const mapStateToProps = (todos) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onRemoveTodo: (id) => {dispatch(removeTodo(id));}
+  onRemoveTodo: (id) => dispatch(removeTodo(id)),
+  onToggleTodo: (id) => dispatch(toggleTodo(id))
 });
 
 

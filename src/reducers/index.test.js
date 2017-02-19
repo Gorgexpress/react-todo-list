@@ -6,31 +6,58 @@ describe('todos reducer', () => {
     expect(reducer(undefined, {})).to.deep.equal([]);
   });
   it('should handle NEW_TODO', () => {
-    const newTodo = {
+    const newTodoAction = {
       type: 'NEW_TODO',
       text: 'do stuff',
       id: 0
     };
-    const expectedState = [{
-      id: 0,
-      text: 'do stuff'
-    }];
-    expect(reducer([], newTodo)).to.deep.equal(expectedState);
+    const expectedState = [
+      {
+        id: 0,
+        text: 'do stuff'
+      }
+    ];
+    expect(reducer([], newTodoAction)).to.deep.equal(expectedState);
   });
-  it('should handle REMOVE_TODO', () => {
-    const state = [{
+  it('should handle TOGGLE_TODO', () => {
+    const state = [
+      {
+        id: 0,
+        text: 'Do something',
+        isDone: false
+      }
+    ];
+    const toggleAction = {
       id: 0,
-      text: 'Mop the floor.'
-    },
-    {
+      type: 'TOGGLE_TODO'
+    };
+    const expectedState = [
+      {
+        id: 0,
+        text: 'Do something',
+        isDone: true
+      }
+    ];
+    expect(reducer(state, toggleAction)).to.deep.equal(expectedState);
+    //reverse the states to test toggling isDone from true to false
+    expect(reducer(expectedState, toggleAction)).to.deep.equal(state);
+  })
+  it('should handle REMOVE_TODO', () => {
+    const state = [
+      {
+        id: 0,
+        text: 'Mop the floor.'
+      },
+      {
       id: 1,
       text: 'Clean the office.'
-    }];
-    const removeTodo = {
+      }
+    ];
+    const removeAction = {
       type: 'REMOVE_TODO',
       id: 1
     };
     const expectedState = state.filter(todo => todo.id === 0);
-    expect(reducer(state, removeTodo)).to.deep.equal(expectedState);
+    expect(reducer(state, removeAction)).to.deep.equal(expectedState);
   });
 })

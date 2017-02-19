@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import {PureNewTodo as NewTodo} from './NewTodo';
+import Todo from './Todo';
 
-describe('<NewTodo />', () => {
+describe('<Todo />', () => {
   it('renders without error', () => {
-    const wrapper = shallow(<NewTodo />);
+    const wrapper = shallow(<Todo />);
     expect(wrapper).to.have.length(1);
   });
 });
