@@ -8,4 +8,4 @@ React, Redux, and unit testing with Enzyme. React without Redux
 would be more reasonable otherwise.
 
 
-![Image of App](https://i.imgur.com/WQVCopP.png)
+![Image of App](http://i.imgur.com/u4dQkbV.png)
