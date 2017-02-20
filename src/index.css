@@ -66,6 +66,7 @@ body {
 }
 
 #app .removeTodo {
+  display: inline-block;
   margin-top: 7px;
   color: #cc9a9a;
   cursor: pointer;
