@@ -14,12 +14,12 @@ const TodoList = ({todos, onToggleTodo, onRemoveTodo}) => {
           {...todo}
           onClick={() => onToggleTodo(todo.id)}
         />
-        <span 
+        <div 
           className="removeTodo" 
           onClick={() => onRemoveTodo(todo.id)}
         >
           X
-        </span>
+        </div>
       </div>
     )}
   </ul>);

@@ -43,6 +43,7 @@ body {
 #app ul {
   list-style-position: inside;
   padding-left: 0;
+  border-bottom: 2px solid #ededed;
 }
 
 #app .todoDiv {
@@ -57,6 +58,7 @@ body {
 #app li {
   min-width: 475px;
   max-width: 475px;
+  margin-top: 7px;
   float: left;
   overflow-wrap: break-word;
   cursor: pointer;
@@ -64,16 +66,13 @@ body {
 }
 
 #app .removeTodo {
+  margin-top: 7px;
   color: #cc9a9a;
   cursor: pointer;
 }
 
 #app .removeTodo:hover {
   color: #af5b5e;
-}
-
-#app .remainingDiv {
-  border-top: 2px solid #ededed;
 }
 
 #app p {
