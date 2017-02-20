@@ -3,9 +3,13 @@ import Todo from './Todo';
 
 const TodoList = ({todos, onToggleTodo, onRemoveTodo}) => {
   return (
-  <ul>
+  <ul 
+    className="todoList"
+  >
     {todos.map(todo =>
-      <div key={todo.id}>
+      <div
+        className="todoDiv" 
+        key={todo.id}>
         <Todo
           {...todo}
           onClick={() => onToggleTodo(todo.id)}

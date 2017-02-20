@@ -8,6 +8,9 @@ let NewTodo = ({ dispatch }) => {
     <div>
       <form onSubmit={e=> {
         e.preventDefault();
+        if (!input.value.trim()) {
+          return;
+        }
         dispatch(newTodo(input.value));
         input.value = '';
         }}>

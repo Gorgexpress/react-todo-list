@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 const RemainingTodos = ({remaining}) => (
-  <div>Remaining: {remaining}</div>
+  <div className="remainingDiv">Remaining: {remaining}</div>
 );
 
 const mapStateToProps = (state, ownProps) => {

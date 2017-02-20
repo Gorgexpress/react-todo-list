@@ -6,31 +6,76 @@ body {
 }
 
 
-li {
-  float: left;
-  min-width: 150px;
-  cursor: pointer;
-}
-
-.removeTodo {
-  color: #cc9a9a;
-  cursor: pointer;
-}
-
-.removeTodo:hover {
-  color: #af5b5e;
-}
-
-
 #app {
-  position: fixed;
-  top:20%;
-  left: 40%;
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 20px;
+  min-width: 500px;
+  max-width: 500px;
   background-color: #ffffff;
   padding-top: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
-  border: solid;
-  border-radius: 25px;
+  border: 2px solid #ededed;
+  border-radius: 10px;
+  border-top: none;
+  font-size: 24px;
+}
+
+#app input {
+  border: 2px solid #ededed;
+  border-radius: 5px;
+  height: 26px;
+  width: 450px;
+  font-size:18px;
+}
+
+#app button {
+  border: solid 2px #ededed;
+  background-color: #F8F8F8 ;
+  font-size: 16px;
+  border-radius: 5px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#app ul {
+  list-style-position: inside;
+  padding-left:0;
+}
+
+#app .todoDiv {
+  cursor: pointer;
+  border-top: 2px solid #ededed;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: auto;
+}
+
+
+#app li {
+  min-width: 475px;
+  max-width: 475px;
+  float: left;
+  overflow-wrap: break-word;
+  cursor: pointer;
+  list-style-position: inside;
+}
+
+#app .removeTodo {
+  color: #cc9a9a;
+  cursor: pointer;
+}
+
+#app .removeTodo:hover {
+  color: #af5b5e;
+}
+
+#app .remainingDiv {
+  border-top: 2px solid #ededed;
+}
+
+#app p {
+  font-size: 16px;
 }
