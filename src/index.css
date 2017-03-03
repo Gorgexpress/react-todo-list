@@ -9,7 +9,7 @@ body {
 #app {
   margin: 0 auto;
   margin-top: 20px;
-  width: 100%;
+  width: auto;
   background-color: #ffffff;
   padding-top: 20px;
   padding-right: 20px;
